@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Спрятать/Показать</title>
+</head>
+<body>
+    <!-- Абзац с секретным текстом -->
+    <p id="secretText">Это секретный текст!</p>
+    <!-- Кнопка для переключения -->
+    <button id="toggleButton">Спрятать/Показать</button>
+    <script>
+        const textElement = document.getElementById('secretText');
+        const buttonElement = document.getElementById('toggleButton');
+        buttonElement.addEventListener('click', function() {
+            
+            if (textElement.style.display === 'none') {
+                textElement.style.display = 'block';
+            } else {
+                textElement.style.display = 'none';
+            }
+            
+        });
+    </script>
+
+</body>
+</html>
