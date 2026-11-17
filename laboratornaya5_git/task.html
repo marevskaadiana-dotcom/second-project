@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доступная карусель</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+      role="region" и aria-roledescription сообщают скринридерам, что это карусель.
+      tabindex="0" позволяет контейнеру получать фокус с клавиатуры (Tab).
+    -->
+    <div class="carousel-wrapper" 
+         role="region" 
+         aria-roledescription="карусель" 
+         aria-label="Галерея изображений" 
+         tabindex="0" 
+         id="carousel">
+        
+        <div class="carousel-controls">
+            <button id="prevBtn" aria-label="Предыдущий слайд">❮ Назад</button>
+            <button id="pauseBtn" aria-label="Приостановить автопрокрутку">Пауза</button>
+            <button id="nextBtn" aria-label="Следующий слайд">Вперед ❯</button>
+        </div>
+
+        <div class="carousel-track" id="track">
+            <!-- Слайд 1 -->
+            <div class="carousel-slide" 
+                 role="group" 
+                 aria-roledescription="слайд" 
+                 aria-label="1 из 3" 
+                 aria-hidden="false">
+                <img src="images/река.jpeg" alt="Горная река">
+            </div>
+            
+            <!-- Слайд 2 -->
+            <div class="carousel-slide" 
+                 role="group" 
+                 aria-roledescription="слайд" 
+                 aria-label="2 из 3" 
+                 aria-hidden="true">
+                <img src="images/гора.jpeg" alt="Горный пейзаж">
+            </div>
+            
+            <!-- Слайд 3 -->
+            <div class="carousel-slide" 
+                 role="group" 
+                 aria-roledescription="слайд" 
+                 aria-label="3 из 3" 
+                 aria-hidden="true">
+                <img src="images/лес.jpeg" alt="Лес и горы">
+            </div>
+        </div>
+
+        <!-- Скрытая область для озвучивания смены слайда скринридером -->
+        <div class="sr-only" aria-live="polite" id="liveRegion">Слайд 1 из 3</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
